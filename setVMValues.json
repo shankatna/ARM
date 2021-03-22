@@ -2,39 +2,72 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-           "location": {
+        "location": {
             "value": "canadacentral"
         },
-        "virtualNetworkName": {
-            "value": "vnet1"
+        "networkInterfaceName": {
+            "value": "vm1763"
         },
-        "resourceGroup": {
-            "value": "rgARM"
+        "networkSecurityGroupName": {
+            "value": "VM1-nsg"
         },
-        "addressSpaces": {
+        "networkSecurityGroupRules": {
             "value": [
-                "10.0.0.0/16"
+                {
+                    "name": "RDP",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                    }
+                }
             ]
         },
-        "ipv6Enabled": {
-            "value": false
-        },
-        "subnetCount": {
-            "value": 1
-        },
-        "subnet0_name": {
+        "subnetName": {
             "value": "default"
         },
-        "subnet0_addressRange": {
-            "value": "10.0.0.0/24"
+        "virtualNetworkId": {
+            "value": "/subscriptions/965d253f-2dc6-4cdf-8220-68e5a80f0c84/resourceGroups/rgARM/providers/Microsoft.Network/virtualNetworks/vnet1"
         },
-        "ddosProtectionPlanEnabled": {
-            "value": false
+        "publicIpAddressName": {
+            "value": "VM1-ip"
         },
-        "firewallEnabled": {
-            "value": false
+        "publicIpAddressType": {
+            "value": "Dynamic"
         },
-        "bastionEnabled": {
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "VM1"
+        },
+        "virtualMachineComputerName": {
+            "value": "VM1"
+        },
+        "virtualMachineRG": {
+            "value": "rgARM"
+        },
+        "osDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B1s"
+        },
+        "adminUsername": {
+            "value": "vmadmin"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "patchMode": {
+            "value": "AutomaticByOS"
+        },
+        "enableHotpatching": {
             "value": false
         }
     }
