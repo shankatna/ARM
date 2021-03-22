@@ -28,6 +28,6 @@ steps:
     resourceGroupName: 'rgARM'
     location: 'Canada Central'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://github.com/shankatna/ARM/mainVM.json'
-    csmParametersFileLink: 'https://github.com/shankatna/ARM/setVMValues.json'
+    csmFileLink: 'https://github.com/shankatna/ARM/blob/main/mainVM.json'
+    csmParametersFileLink: 'https://github.com/shankatna/ARM/blob/main/setVMValues.json'
     deploymentMode: 'Incremental'
