@@ -28,5 +28,5 @@ steps:
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/shankatna/ARM/main/mainVM.json'
     csmParametersFileLink: 'https://raw.githubusercontent.com/shankatna/ARM/main/setVMValues.json'
-    overrideParameters: 'adminPassword $(adminuseridpassword)'
+    overrideParameters: '-adminPassword $(adminuseridpassword)'
     deploymentMode: 'Incremental'
