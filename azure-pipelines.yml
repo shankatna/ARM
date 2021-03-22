@@ -17,16 +17,26 @@ steps:
     KeyVaultName: 'armdevopskeyvault'
     SecretsFilter: '*'
     RunAsPreJob: false
-- task: AzureResourceManagerTemplateDeployment@3
+- task: CmdLine@2
   inputs:
-    deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'Production - DevOps2Portal'
-    subscriptionId: '965d253f-2dc6-4cdf-8220-68e5a80f0c84'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: 'rgARM'
-    location: 'Canada Central'
-    templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/shankatna/ARM/main/mainVM.json'
-    csmParametersFileLink: 'https://raw.githubusercontent.com/shankatna/ARM/main/setVMValues.json'
-    overrideParameters: '-adminUsername "adminuser" -adminPassword $(adminuseridpassword)'
-    deploymentMode: 'Complete'
+     script: 'echo  $(adminuseridpassword)'' > secret.txt'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifact: 'drop'
+    publishLocation: 'pipeline'
+    
+#- task: AzureResourceManagerTemplateDeployment@3
+#  inputs:
+#    deploymentScope: 'Resource Group'
+#    azureResourceManagerConnection: 'Production - DevOps2Portal'
+#    subscriptionId: '965d253f-2dc6-4cdf-8220-68e5a80f0c84'
+#    action: 'Create Or Update Resource Group'
+#    resourceGroupName: 'rgARM'
+#    location: 'Canada Central'
+#    templateLocation: 'URL of the file'
+#    csmFileLink: 'https://raw.githubusercontent.com/shankatna/ARM/main/mainVM.json'
+#    csmParametersFileLink: 'https://raw.githubusercontent.com/shankatna/ARM/main/setVMValues.json'
+#    overrideParameters: '-adminUsername "adminuser" -adminPassword $(adminuseridpassword)'
+#    deploymentMode: 'Complete'
