@@ -62,12 +62,7 @@
             "value": "vmadmin"
         },
         "adminPassword": {
-                "reference": {
-                "keyVault": {
-                "id": "/subscriptions/965d253f-2dc6-4cdf-8220-68e5a80f0c84>/resourceGroups/rgARM/providers/Microsoft.KeyVault/vaults/armdevopskeyvault"
-                },
-                "secretName": "adminuseridpassword"
-            }
+            "value": "dummyValue"                
         },
         "patchMode": {
             "value": "AutomaticByOS"
