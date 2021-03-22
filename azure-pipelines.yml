@@ -29,4 +29,4 @@ steps:
     csmFileLink: 'https://raw.githubusercontent.com/shankatna/ARM/main/mainVM.json'
     csmParametersFileLink: 'https://raw.githubusercontent.com/shankatna/ARM/main/setVMValues.json'
     overrideParameters: '-adminUsername "adminuser" -adminPassword $(adminuseridpassword)'
-    deploymentMode: 'Incremental'
+    deploymentMode: 'Complete'
