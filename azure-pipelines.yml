@@ -15,7 +15,7 @@ steps:
   inputs:
     azureSubscription: 'Production - DevOps2Portal'
     KeyVaultName: 'armdevopskeyvault'
-    SecretsFilter: '$(adminuseridpassword)'
+    SecretsFilter: 'adminuseridpassword'
     RunAsPreJob: true
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
