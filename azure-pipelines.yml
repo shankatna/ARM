@@ -15,8 +15,8 @@ steps:
   inputs:
     azureSubscription: 'Production - DevOps2Portal'
     KeyVaultName: 'armdevopskeyvault'
-    SecretsFilter: 'adminuseridpassword'
-    RunAsPreJob: true
+    SecretsFilter: '*'
+    RunAsPreJob: false
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
@@ -28,4 +28,5 @@ steps:
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/shankatna/ARM/main/mainVM.json'
     csmParametersFileLink: 'https://raw.githubusercontent.com/shankatna/ARM/main/setVMValues.json'
+    overrideParameters: 'adminPassword $(adminuseridpassword)'
     deploymentMode: 'Incremental'
