@@ -62,7 +62,7 @@
             "value": "vmadmin"
         },
         "adminPassword": {
-            "value": null
+            "value": "https://armdevopskeyvault.vault.azure.net/secrets/adminuseridpassword/868b5494a8c5419c9dd5700ba41e472e"
         },
         "patchMode": {
             "value": "AutomaticByOS"
