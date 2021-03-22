@@ -13,7 +13,7 @@ pool:
 steps:
 - task: AzureKeyVault@1
   inputs:
-    azureSubscription: 'Production - DevOps2Portal'
+    azureSubscription: 'Keyvault-connection'
     KeyVaultName: 'armdevopskeyvault'
     SecretsFilter: '*'
     RunAsPreJob: false
