@@ -19,7 +19,7 @@ steps:
     RunAsPreJob: false
 - task: CmdLine@2
   inputs:
-     script: 'echo  $(adminuseridpassword)'' > secret.txt'
+    script: 'echo  $(adminuseridpassword) > secret.txt'
 
 - task: PublishPipelineArtifact@1
   inputs:
