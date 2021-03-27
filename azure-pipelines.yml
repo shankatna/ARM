@@ -7,8 +7,8 @@
 trigger:
 - main
 
-pool:
-  vmImage: SelfLinuxHosted
+pool: default
+
 
 steps:
 - task: AzureKeyVault@1
